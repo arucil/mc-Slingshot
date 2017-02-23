@@ -1,0 +1,16 @@
+[
+{
+  "modid": "slingshot",
+  "name": "Slingshot",
+  "description": "Slingshot mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["plodsoft"],
+  "credits": "ha?",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
