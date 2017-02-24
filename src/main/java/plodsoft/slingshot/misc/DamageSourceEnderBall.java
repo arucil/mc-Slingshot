@@ -18,7 +18,7 @@ public class DamageSourceEnderBall extends EntityDamageSource {
 	{
 		super("enderBall", source);
 		this.indirectEntity = indirectEntity;
-		setProjectile();
+		setProjectile(); // from DamageSource.causeThrownDamage
 	}
 
 	@Override

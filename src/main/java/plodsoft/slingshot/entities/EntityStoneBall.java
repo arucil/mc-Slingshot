@@ -2,6 +2,7 @@ package plodsoft.slingshot.entities;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.world.World;
+import plodsoft.slingshot.Config;
 
 public class EntityStoneBall extends EntityBall {
 	public EntityStoneBall(World world, EntityLivingBase thrower) {
@@ -18,6 +19,6 @@ public class EntityStoneBall extends EntityBall {
 
 	@Override
 	protected float getInitialDamage() {
-		return 2f;
+		return Config.stoneballDamage;
 	}
 }

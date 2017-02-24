@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import plodsoft.slingshot.Config;
 import plodsoft.slingshot.misc.DamageSourceEnderBall;
 
 public class EntityEnderBall extends EntityBall {
@@ -21,7 +22,7 @@ public class EntityEnderBall extends EntityBall {
 
 	@Override
 	protected float getInitialDamage() {
-		return 10f;
+		return Config.enderballDamage;
 	}
 
 	@Override

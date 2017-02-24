@@ -1,4 +1,4 @@
-package plodsoft.slingshot;
+package plodsoft.slingshot.proxy;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import plodsoft.slingshot.ModItems;
 import plodsoft.slingshot.entities.*;
 
 public class ClientProxy extends CommonProxy {
