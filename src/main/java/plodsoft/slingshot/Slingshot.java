@@ -4,6 +4,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import plodsoft.slingshot.proxy.CommonProxy;
 
 @Mod(modid = Slingshot.MODID,
@@ -21,6 +23,8 @@ public class Slingshot {
 
 	@Mod.Instance(MODID)
 	public static Slingshot instance;
+
+	public static Logger log = LogManager.getLogger(NAME);
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
