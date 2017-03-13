@@ -25,15 +25,10 @@ public class ItemSlingshot extends ItemBow {
 	public ItemSlingshot() {
 		setUnlocalizedName(NAME);
 		setRegistryName(NAME);
-		setMaxDamage(-1);
+		setMaxDamage(10000);
 	}
 
-	@Override
-	public boolean isDamageable() {
-		return true;
-	}
-
-	private ItemStack findBall(EntityPlayer player)
+   private ItemStack findBall(EntityPlayer player)
 	{
 		if (this.isBall(player.getHeldItem(EnumHand.OFF_HAND)))
 		{
@@ -108,11 +103,6 @@ public class ItemSlingshot extends ItemBow {
 			return new ActionResult<>(EnumActionResult.SUCCESS, stack);
 		}
 		return new ActionResult<>(EnumActionResult.FAIL, stack);
-	}
-
-	@Override
-	public int getMaxItemUseDuration(ItemStack stack) {
-		return -1;
 	}
 
 	@Override

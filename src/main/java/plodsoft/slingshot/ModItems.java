@@ -1,7 +1,9 @@
 package plodsoft.slingshot;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -89,5 +91,6 @@ public class ModItems {
 				's', Items.STRING,
 				'f', Items.LEATHER,
 				't', Items.STICK);
-	}
+      GameRegistry.addRecipe(new RecipeLooting());
+   }
 }
