@@ -52,6 +52,12 @@ public abstract class EntityBall extends EntityThrowable {
 		setDamage(getInitialDamage());
 	}
 
+	// velocity not affected by water
+	@Override
+	public boolean isInWater() {
+      return false;
+   }
+
 	@Override
 	protected float getGravityVelocity() {
 		return 0f;
@@ -97,9 +103,8 @@ public abstract class EntityBall extends EntityThrowable {
 				}
 			}
 		}
-		if (!worldObj.isRemote) {
-			setDead();
-		}
+		if (!worldObj.isRemote)
+         setDead();
 	}
 
 	public static EntityBall createEntity(World world, EntityLivingBase thrower, ItemBall item) {
