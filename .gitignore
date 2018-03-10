@@ -21,6 +21,4 @@ build
 eclipse
 run
 
-/*.jar
-
 gradle.properties
