@@ -62,6 +62,7 @@ public class ItemSlingshot extends ItemBow {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(@Nullable World world,
 			EntityPlayer player, EnumHand hand) {
+	    System.out.println("----------------------------LUCK: " + player.getLuck());
         ItemStack stack = player.getHeldItem(hand);
 		ItemStack ball = findBall(player);
 		boolean flag = player.capabilities.isCreativeMode
