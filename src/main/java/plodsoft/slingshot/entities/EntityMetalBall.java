@@ -1,6 +1,8 @@
 package plodsoft.slingshot.entities;
 
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.world.World;
 import plodsoft.slingshot.Config;
 
@@ -21,4 +23,8 @@ public class EntityMetalBall extends EntityBall {
 	protected float getInitialDamage() {
 		return Config.metalballDamage;
 	}
+
+    public static void registerFixesRock(DataFixer fixer) {
+        EntityThrowable.registerFixesThrowable(fixer, "MetalBall");
+    }
 }

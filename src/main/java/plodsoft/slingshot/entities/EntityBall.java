@@ -9,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.network.play.server.SPacketChangeGameState;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
@@ -85,7 +86,7 @@ public abstract class EntityBall extends EntityThrowable {
 					EntityLivingBase base = (EntityLivingBase) entity;
 
 					if (knockbackStrength > 0) {
-						float f1 = MathHelper.sqrt_double(motionX * motionX + motionZ * motionZ);
+						float f1 = MathHelper.sqrt(motionX * motionX + motionZ * motionZ);
 						if (f1 > 0f) {
 							base.addVelocity(motionX * knockbackStrength * 0.6000000238418579D / f1,
 								0.1D, motionZ * knockbackStrength * 0.6000000238418579D / f1);
@@ -103,7 +104,7 @@ public abstract class EntityBall extends EntityThrowable {
 				}
 			}
 		}
-		if (!worldObj.isRemote)
+		if (!this.world.isRemote)
          setDead();
 	}
 

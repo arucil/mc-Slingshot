@@ -1,96 +1,39 @@
 package plodsoft.slingshot;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Enchantments;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.registries.IForgeRegistry;
 import plodsoft.slingshot.items.ItemBall;
 import plodsoft.slingshot.items.ItemSlingshot;
 
 public class ModItems {
+    @GameRegistry.ObjectHolder("slingshot:slingshot")
 	public static Item slingshot;
 	public static Item stone_ball;
 	public static Item metal_ball;
 	public static Item ender_ball;
 
-	public static void init() {
-		register(slingshot = new ItemSlingshot());
-		register(stone_ball = new ItemBall("stone_ball"));
-		register(metal_ball = new ItemBall("metal_ball"));
-		register(ender_ball = new ItemBall("ender_ball"));
+	static {
+		slingshot = new ItemSlingshot().setCreativeTab(CreativeTabs.COMBAT);
+		stone_ball = new ItemBall("stone_ball").setCreativeTab(CreativeTabs.COMBAT);
+		metal_ball = new ItemBall("metal_ball").setCreativeTab(CreativeTabs.COMBAT);
+		ender_ball = new ItemBall("ender_ball").setCreativeTab(CreativeTabs.COMBAT);
 	}
 
-	private static void register(Item item) {
-		item.setCreativeTab(CreativeTabs.COMBAT);
-		GameRegistry.register(item);
-		Slingshot.proxy.registerItemRenderer(item, 0, item.getRegistryName().toString());
-	}
+	public static void register(IForgeRegistry<Item> registry) {
+	    registry.registerAll(slingshot, stone_ball, metal_ball, ender_ball);
+    }
 
-	public static void registerRecipe() {
-		GameRegistry.addShapedRecipe(new ItemStack(stone_ball, 8),
-				"A ",
-				" A",
-				'A', Item.getItemFromBlock(Blocks.COBBLESTONE));
-		GameRegistry.addShapedRecipe(new ItemStack(stone_ball, 8),
-				" A",
-				"A ",
-				'A', Item.getItemFromBlock(Blocks.COBBLESTONE));
+	public static void registerModels() {
+	    registerModel(slingshot);
+	    registerModel(stone_ball);
+        registerModel(metal_ball);
+        registerModel(ender_ball);
+    }
 
-		GameRegistry.addShapedRecipe(new ItemStack(metal_ball, 16),
-				" A",
-				"B ",
-				'A', Items.IRON_INGOT,
-				'B', Items.GOLD_INGOT);
-		GameRegistry.addShapedRecipe(new ItemStack(metal_ball, 16),
-				" B",
-				"A ",
-				'A', Items.IRON_INGOT,
-				'B', Items.GOLD_INGOT);
-		GameRegistry.addShapedRecipe(new ItemStack(metal_ball, 16),
-				"A ",
-				" B",
-				'A', Items.IRON_INGOT,
-				'B', Items.GOLD_INGOT);
-		GameRegistry.addShapedRecipe(new ItemStack(metal_ball, 16),
-				"B ",
-				" A",
-				'A', Items.IRON_INGOT,
-				'B', Items.GOLD_INGOT);
+    private static void registerModel(Item item) {
+        Slingshot.proxy.registerItemRenderer(item, 0, item.getRegistryName().toString());
+    }
 
-		GameRegistry.addShapedRecipe(new ItemStack(ender_ball, 16),
-				"B ",
-				" A",
-				'A', Items.DIAMOND,
-				'B', Items.ENDER_PEARL);
-		GameRegistry.addShapedRecipe(new ItemStack(ender_ball, 16),
-				"A ",
-				" B",
-				'A', Items.DIAMOND,
-				'B', Items.ENDER_PEARL);
-		GameRegistry.addShapedRecipe(new ItemStack(ender_ball, 16),
-				" A",
-				"B ",
-				'A', Items.DIAMOND,
-				'B', Items.ENDER_PEARL);
-		GameRegistry.addShapedRecipe(new ItemStack(ender_ball, 16),
-				" B",
-				"A ",
-				'A', Items.DIAMOND,
-				'B', Items.ENDER_PEARL);
-
-		GameRegistry.addShapedRecipe(new ItemStack(slingshot),
-				"sfs",
-				"t t",
-				" t ",
-				's', Items.STRING,
-				'f', Items.LEATHER,
-				't', Items.STICK);
-      GameRegistry.addRecipe(new RecipeLooting());
-   }
 }

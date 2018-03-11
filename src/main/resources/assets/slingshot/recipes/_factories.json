@@ -1,0 +1,7 @@
+{
+  "ingredients": {
+  },
+  "recipes": {
+    "looting_slingshot": "plodsoft.slingshot.recipes.LootingSlingshotRecipe$Factory"
+  }
+}

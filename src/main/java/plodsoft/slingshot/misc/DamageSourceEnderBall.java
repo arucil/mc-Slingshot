@@ -21,19 +21,31 @@ public class DamageSourceEnderBall extends EntityDamageSource {
 		setProjectile(); // from DamageSource.causeThrownDamage
 	}
 
+    /**
+     * Retrieves the immediate causer of the damage, e.g. the arrow entity, not its shooter
+     */
+    @Override
+    @Nullable
+    public Entity getImmediateSource()
+    {
+        return this.damageSourceEntity;
+    }
+
 	@Override
 	@Nullable
-	public Entity getSourceOfDamage()
+	public Entity getTrueSource()
 	{
-		return this.damageSourceEntity;
+		return this.indirectEntity;
 	}
 
+	/*
 	@Override
 	@Nullable
 	public Entity getEntity()
 	{
 		return this.indirectEntity;
 	}
+	*/
 
 	/**
 	 * Gets the death message that is displayed when the player dies
