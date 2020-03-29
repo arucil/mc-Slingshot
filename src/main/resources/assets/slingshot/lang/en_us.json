@@ -1,0 +1,8 @@
+{
+  "item.slingshot.stone_ball": "Stone Ball",
+  "item.slingshot.metal_ball": "Metal Ball",
+  "item.slingshot.ender_ball": "Ender Ball",
+  "item.slingshot.slingshot": "Slingshot",
+  "death.slingshot.attack.slingshot": "%1$s was shot by %2$s",
+  "death.slingshot.attack.slingshot.item": "%1$s was shot by %2$s using %3$s"
+}

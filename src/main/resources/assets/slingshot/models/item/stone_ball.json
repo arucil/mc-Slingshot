@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "slingshot:items/stone_ball"
+    "layer0": "slingshot:item/stone_ball"
   }
 }

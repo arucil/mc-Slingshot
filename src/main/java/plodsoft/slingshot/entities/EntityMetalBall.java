@@ -1,30 +1,32 @@
 package plodsoft.slingshot.entities;
 
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.util.datafix.DataFixer;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.Item;
 import net.minecraft.world.World;
-import plodsoft.slingshot.Config;
+import plodsoft.slingshot.ModEntityTypes;
+import plodsoft.slingshot.ModItems;
 
 public class EntityMetalBall extends EntityBall {
-	public EntityMetalBall(World world, EntityLivingBase thrower) {
-		super(world, thrower);
-	}
+    public EntityMetalBall(EntityType<? extends EntityMetalBall> entityType, World world) {
+        super(entityType, world);
+    }
 
-	public EntityMetalBall(World world) {
-		super(world);
-	}
+    public EntityMetalBall(World world, LivingEntity thrower) {
+        super(ModEntityTypes.METAL_BALL.get(), world, thrower);
+    }
 
-	public EntityMetalBall(World world, double x, double y, double z) {
-		super(world, x, y, z);
-	}
+    public EntityMetalBall(World world, double x, double y, double z) {
+        super(ModEntityTypes.METAL_BALL.get(), world, x, y, z);
+    }
 
-	@Override
-	protected float getInitialDamage() {
-		return Config.metalballDamage;
-	}
+    @Override
+    protected float getInitialDamage() {
+        return 6f;
+    }
 
-    public static void registerFixesRock(DataFixer fixer) {
-        EntityThrowable.registerFixesThrowable(fixer, "MetalBall");
+    @Override
+    protected Item getDefaultItem() {
+        return ModItems.METAL_BALL;
     }
 }

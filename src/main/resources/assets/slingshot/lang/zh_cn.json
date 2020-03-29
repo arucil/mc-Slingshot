@@ -1,0 +1,8 @@
+{
+  "item.slingshot.stone_ball": "石弹珠",
+  "item.slingshot.metal_ball": "金属弹珠",
+  "item.slingshot.ender_ball": "末影弹珠",
+  "item.slingshot.slingshot": "弹弓",
+  "death.slingshot.attack.slingshot": "%1$s 被 %2$s 射杀了",
+  "death.slingshot.attack.slingshot.item": "%1$s 被 %2$s 射出的 %3$s 杀死了"
+}

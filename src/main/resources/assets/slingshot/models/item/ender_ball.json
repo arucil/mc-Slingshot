@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "slingshot:items/ender_ball"
+    "layer0": "slingshot:item/ender_ball"
   }
 }
